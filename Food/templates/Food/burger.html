@@ -17,16 +17,16 @@
             <div class="card" style="width: 15rem; height: 400px; background-color: beige; margin-bottom: 30px;margin-right: 5px;">
               <img class="card-img-top" src={{br.bImage.url}} alt="Card image cap" style="height: 50%;">
               <div class="card-body">
-                <h5 class="card-title">{{br.name}}</h5>
+                <h5 class="card-title" id="bur{{br.name}}">{{br.name}}</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                 <div class="form-check-inline">
                   <label class="form-check-label"></label>
-                  <input type="radio" class="form-check-input" name="price" id="price" checked>
+                  <input type="radio" class="form-check-input" name="br{{br.id}}" id="price" value=" {{br.priceM}}" checked>
                   {{br.priceM}}$
                 </div>
                 <div class="form-check-inline">
                   <label class="form-check-label"></label>
-                  <input type="radio" class="form-check-input" name="price" id="price" >
+                  <input type="radio" class="form-check-input" name="br{{br.id}}" id="price" value=" {{br.priceL}}">
                   {{br.priceL}}$
                 </div>
                 <div style="padding-top: 5px; padding-bottom: 5px;">

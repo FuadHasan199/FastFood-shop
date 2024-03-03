@@ -1,7 +1,9 @@
 {% extends "Food/base.html" %}
+
 {% block title %}
   pizza
 {% endblock title %}
+
 
 {% block content %}
     
@@ -17,16 +19,16 @@
             <div class="card" style="width: 15rem; height: 400px; background-color: beige; margin-bottom: 30px;margin-right: 5px;">
               <img class="card-img-top" src={{pi.pImage.url}} alt="Card image cap" style="height: 50%;">
               <div class="card-body">
-                <h5 class="card-title">{{pi.name}}</h5>
+                <h5 class="card-title" id="piz{{pi.id}}">{{pi.name}}</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                 <div class="form-check-inline">
                   <label class="form-check-label"></label>
-                  <input type="radio" class="form-check-input" name="price" id="price" checked>
+                  <input type="radio" class="form-check-input" name="pi{{pi.id}}" id="price" value="{{pi.priceM}}" checked>
                   {{pi.priceM}}$
                 </div>
                 <div class="form-check-inline">
                   <label class="form-check-label"></label>
-                  <input type="radio" class="form-check-input" name="price" id="price" >
+                  <input type="radio" class="form-check-input" name="pi{{pi.id}}" id="price" value="{{pi.priceL}}" >
                   {{pi.priceL}}$
                 </div>
                 <div style="padding-top: 5px;">
@@ -37,8 +39,9 @@
             {% endfor %}
           </div>
         </div>
-        <div class="col-md-4" style="border: 1px solid black; margin-top: 140px; height: 400px; width:15rem; padding-left: 10px;background-color: bisque;">
-
+        <div class="col-md-4 orders" style=" margin-top: 140px; height: 400px; width:15rem; padding-left: 10px;background-color: bisque;">
+            <h2 class="text-center">Order List</h2>
+            <h4>Total: 0 $</h4>
         </div>
       </div>
     </div>
