@@ -1,0 +1,47 @@
+{% extends "Food/base.html" %}
+{% block title %}
+  pizza
+{% endblock title %}
+
+{% block content %}
+    
+   <div class="container">
+     
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <h3 style="text-align: center;font-size:xx-large; padding-top: 40px;padding-bottom: 30px;font-weight: bold">Our Pizzas</h3>
+          <hr>
+          <div class="row">
+            {% for pi in pizza %}
+            <div class="card" style="width: 15rem; height: 400px; background-color: beige; margin-bottom: 30px;margin-right: 5px;">
+              <img class="card-img-top" src={{pi.pImage.url}} alt="Card image cap" style="height: 50%;">
+              <div class="card-body">
+                <h5 class="card-title">{{pi.name}}</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <div class="form-check-inline">
+                  <label class="form-check-label"></label>
+                  <input type="radio" class="form-check-input" name="price" id="price" checked>
+                  {{pi.priceM}}$
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label"></label>
+                  <input type="radio" class="form-check-input" name="price" id="price" >
+                  {{pi.priceL}}$
+                </div>
+                <div style="padding-top: 5px;">
+                  <button class="btn btn-secondary " style="width:100%;">Add to cart</button>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-4" style="border: 1px solid black; margin-top: 140px; height: 400px; width:15rem; padding-left: 10px;background-color: bisque;">
+
+        </div>
+      </div>
+    </div>
+   </div>
+     
+{% endblock content %}
